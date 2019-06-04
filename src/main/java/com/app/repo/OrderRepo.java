@@ -8,8 +8,8 @@ import com.app.model.order.*;
 
 
 public interface OrderRepo extends JpaRepository<Order, Integer> {
-    public List<Order> findAll();
-    public Page<Order> findAll(Pageable p);
+//    public List<Order> findAll();
+//    public Page<Order> findAll(Pageable p);
 
 }
 

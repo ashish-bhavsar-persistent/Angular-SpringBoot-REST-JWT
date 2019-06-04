@@ -1,19 +1,22 @@
 package com.app.api.user;
 
-import io.swagger.annotations.*;
-import org.springframework.web.bind.annotation.*;
-
-import org.springframework.http.*;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.servlet.http.HttpServletRequest;
-import com.google.common.base.Strings;
-import org.apache.commons.io.IOUtils;
-import org.json.*;
 
-import com.app.model.response.*;
-import com.app.model.user.*;
-import static com.app.model.response.OperationResponse.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.model.response.OperationResponse;
+import com.app.model.response.OperationResponse.ResponseStatusEnum;
+import com.app.model.user.User;
+import com.app.model.user.UserResponse;
+import com.google.common.base.Strings;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @Api(tags = {"Authentication"})

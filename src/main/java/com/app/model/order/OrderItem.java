@@ -1,13 +1,13 @@
 package com.app.model.order;
 
-import lombok.*;
+
 import java.io.Serializable;
 import java.util.*;
 import java.math.*;
 import javax.persistence.*;
 import io.swagger.annotations.ApiModelProperty;
 
-@Data
+
 @Entity
 @Table(name = "order_items")
 public class OrderItem  {

@@ -50,7 +50,7 @@ public class EmployeeController {
     @RequestMapping(value = "/employees", method = RequestMethod.POST, produces = {"application/json"})
     public OperationResponse addNewEmployee(@RequestBody Employee employee, HttpServletRequest req) {
         OperationResponse resp = new OperationResponse();
-        if (this.employeeRepo.exists(employee.getId()) ){
+        if (this.employeeRepo.existsById(employee.getId()) ){
             resp.setOperationStatus(ResponseStatusEnum.ERROR);
             resp.setOperationMessage("Unable to add Employee - Employee allready exist ");
         }
@@ -68,8 +68,8 @@ public class EmployeeController {
     public OperationResponse deleteEmployee(@PathVariable("employeeId") Integer employeeId, HttpServletRequest req) {
         OperationResponse resp = new OperationResponse();
         try {
-            if (this.employeeRepo.exists(employeeId) ){
-                this.employeeRepo.delete(employeeId);
+            if (this.employeeRepo.existsById(employeeId) ){
+                this.employeeRepo.deleteById(employeeId);
                 resp.setOperationStatus(ResponseStatusEnum.SUCCESS);
                 resp.setOperationMessage("Employee Deleted");
             }

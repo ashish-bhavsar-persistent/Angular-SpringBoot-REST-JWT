@@ -11,7 +11,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import org.apache.commons.io.IOUtils;
 import org.json.*;
-import lombok.extern.slf4j.Slf4j;
+
 
 import com.app.identity.*;
 import com.app.model.user.User;
@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.*;
 
 
 /* This filter maps to /session and tries to validate the username and password */
-@Slf4j
+//@Slf4j
 public class GenerateTokenForUserFilter extends AbstractAuthenticationProcessingFilter {
 
     private TokenUtil tokenUtil;
@@ -42,7 +42,7 @@ public class GenerateTokenForUserFilter extends AbstractAuthenticationProcessing
             String password = userJSON.getString("password");
             String browser = request.getHeader("User-Agent")!= null?request.getHeader("User-Agent"):"";
             String ip = request.getRemoteAddr();
-            log.info("\nip:{} \nbrowser:{} \n----",ip,browser);
+//            log.info("\nip:{} \nbrowser:{} \n----",ip,browser);
 
             //final UsernamePasswordAuthenticationToken loginToken = new UsernamePasswordAuthenticationToken("demo", "demo");
             final UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(username, password);

@@ -1,12 +1,12 @@
 package com.app.model.order;
 
-import io.swagger.annotations.*;
-import lombok.*;
-import java.util.*;
-import com.app.model.response.*;
+import java.util.List;
 
-@Data
-@EqualsAndHashCode(callSuper=false)
+import com.app.model.response.PageResponse;
+
+import io.swagger.annotations.ApiModelProperty;
+
+
 public class OrderResponse extends PageResponse {
   @ApiModelProperty(required = true, value = "")
   private List<Order> items;

@@ -55,7 +55,7 @@ public class ProductController {
 
         OperationResponse resp = new OperationResponse();
 
-        if (this.productRepo.exists(product.getId()) ){
+        if (this.productRepo.existsById(product.getId()) ){
             resp.setOperationStatus(ResponseStatusEnum.ERROR);
             resp.setOperationMessage("Unable to add Product - Product allready exist ");
         }
@@ -72,8 +72,8 @@ public class ProductController {
     @RequestMapping(value = "/products/{productId}", method = RequestMethod.DELETE, produces = {"application/json"})
     public OperationResponse deleteProduct(@PathVariable("productId") Integer productId, HttpServletRequest req) {
         OperationResponse resp = new OperationResponse();
-        if (this.productRepo.exists(productId) ){
-            this.productRepo.delete(productId);
+        if (this.productRepo.existsById(productId) ){
+            this.productRepo.deleteById(productId);
             resp.setOperationStatus(ResponseStatusEnum.SUCCESS);
             resp.setOperationMessage("Product Deleted");
         }

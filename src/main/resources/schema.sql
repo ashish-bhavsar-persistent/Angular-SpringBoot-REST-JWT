@@ -25,12 +25,12 @@ CREATE TABLE user (
     postal      NVARCHAR(20) ,
     role        NVARCHAR(20) ,
     other_roles NVARCHAR(80) ,
-    is_active   TINYINT  ,
-    is_blocked  TINYINT  ,
+    is_active   boolean  ,
+    is_blocked  boolean  ,
     secret_question     NVARCHAR(100),
     secret_answer       NVARCHAR(100),
-    enable_beta_testing TINYINT,
-    enable_renewal      TINYINT,
+    enable_beta_testing boolean,
+    enable_renewal      boolean,
     CONSTRAINT user_id PRIMARY KEY(user_id)
 );
 
@@ -116,7 +116,7 @@ CREATE TABLE products (
   reorder_level   INT ,
   minimum_reorder_quantity INT ,
   quantity_per_unit VARCHAR(50) ,
-  discontinued    TINYINT NOT NULL DEFAULT '0',
+  discontinued    INT NOT NULL DEFAULT '0',
   category        VARCHAR(50),
   PRIMARY KEY (id)
 );

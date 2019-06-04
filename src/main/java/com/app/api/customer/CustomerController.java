@@ -54,7 +54,7 @@ public class CustomerController {
     @RequestMapping(value = "/customers", method = RequestMethod.POST, produces = {"application/json"})
     public OperationResponse addNewCustomer(@RequestBody Customer customer, HttpServletRequest req) {
         OperationResponse resp = new OperationResponse();
-        if (this.customerRepo.exists(customer.getId()) ){
+        if (this.customerRepo.existsById(customer.getId()) ){
             resp.setOperationStatus(ResponseStatusEnum.ERROR);
             resp.setOperationMessage("Unable to add Customer - Customer allready exist ");
         }
@@ -72,8 +72,8 @@ public class CustomerController {
     public OperationResponse deleteCustomer(@PathVariable("customerId") Integer customerId, HttpServletRequest req) {
         OperationResponse resp = new OperationResponse();
         try {
-            if (this.customerRepo.exists(customerId) ){
-                this.customerRepo.delete(customerId);
+            if (this.customerRepo.existsById(customerId) ){
+                this.customerRepo.deleteById(customerId);
                 resp.setOperationStatus(ResponseStatusEnum.SUCCESS);
                 resp.setOperationMessage("Customer Deleted");
             }

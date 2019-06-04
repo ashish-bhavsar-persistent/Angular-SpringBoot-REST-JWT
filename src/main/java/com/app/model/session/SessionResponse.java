@@ -1,13 +1,19 @@
 package com.app.model.session;
 
-import io.swagger.annotations.*;
-import lombok.*;
-import java.util.*;
-import com.app.model.response.*;
+import com.app.model.response.OperationResponse;
 
-@Data
-@EqualsAndHashCode(callSuper=false)
+import io.swagger.annotations.ApiModelProperty;
+
 public class SessionResponse extends OperationResponse {
-  @ApiModelProperty(required = true, value = "")
-  private SessionItem item;
+	@ApiModelProperty(required = true, value = "")
+	private SessionItem item;
+
+	public SessionItem getItem() {
+		return item;
+	}
+
+	public void setItem(SessionItem item) {
+		this.item = item;
+	}
+
 }

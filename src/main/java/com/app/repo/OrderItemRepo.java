@@ -8,7 +8,7 @@ import com.app.model.order.*;
 
 
 public interface OrderItemRepo extends JpaRepository<OrderItem, Long> {
-    public List<OrderItem> findAll();
-    public Page<OrderItem> findAll(Pageable p);
+//    public List<OrderItem> findAll();
+//    public Page<OrderItem> findAll(Pageable p);
 }
 

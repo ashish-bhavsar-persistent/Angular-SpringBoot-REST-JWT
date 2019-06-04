@@ -1,13 +1,22 @@
 package com.app.model.product;
 
-import io.swagger.annotations.*;
-import lombok.*;
-import java.util.*;
-import com.app.model.response.*;
+import java.util.List;
 
-@Data
-@EqualsAndHashCode(callSuper=false)
+import com.app.model.response.PageResponse;
+
+import io.swagger.annotations.ApiModelProperty;
+
+
 public class ProductResponse extends PageResponse {
-  @ApiModelProperty(required = true, value = "")
-  private List<Product> items;
+	@ApiModelProperty(required = true, value = "")
+	private List<Product> items;
+
+	public List<Product> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Product> items) {
+		this.items = items;
+	}
+
 }
